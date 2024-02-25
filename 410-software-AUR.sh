@@ -90,7 +90,7 @@ esac
 func_category Any_software_from_AUR
 
 list=(
-
+	xviewer
 )
 
 count=0
