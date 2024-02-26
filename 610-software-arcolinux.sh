@@ -52,8 +52,9 @@ list=(
 	hardcode-fixer-git
 	# gnome-terminal-transparency
 	libadwaita-without-adwaita-git
-	mintstick-git
 	# librewolf-bin
+	mintstick-git
+	oh-my-zsh-git
 	sublime-text-4
 	ttf-icomoon-feather
 	ventoy-bin
