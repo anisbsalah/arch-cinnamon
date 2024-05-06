@@ -28,7 +28,7 @@ func_install() {
 		echo "######################################################################################################"
 		echo
 		tput sgr0
-		sudo pacman -S --noconfirm --needed "$1"
+		"${aur_command}" -S --noconfirm --needed "$1"
 	fi
 }
 
@@ -40,6 +40,68 @@ func_category() {
 	echo "######################################################################################################"
 	tput sgr0
 }
+
+###############################################################################
+
+echo
+tput setaf 4
+echo "######################################################################################################"
+echo "Installing AUR packages"
+echo "######################################################################################################"
+echo
+tput sgr0
+
+read -erp ":: Proceed with installation? [Y/n] " CHOICE
+
+case ${CHOICE} in
+
+[Yy][Ee][Ss] | [Yy] | "")
+
+	if command -v yay >/dev/null 2>&1; then
+		aur_command="yay"
+	elif command -v paru >/dev/null 2>&1; then
+		aur_command="paru"
+	elif command -v trizen >/dev/null 2>&1; then
+		aur_command="trizen"
+	elif command -v pikaur >/dev/null 2>&1; then
+		aur_command="pikaur"
+	elif command -v pakku >/dev/null 2>&1; then
+		aur_command="pakku"
+	elif command -v aurman >/dev/null 2>&1; then
+		aur_command="aurman"
+	elif command -v aura >/dev/null 2>&1; then
+		aur_command="sudo aura"
+	fi
+	;;
+
+[Nn][Oo] | [Nn] | *)
+	tput setaf 5
+	echo "######################################################################################################"
+	echo "We did nothing as per your request"
+	echo "######################################################################################################"
+	echo
+	tput sgr0
+	exit 0
+	;;
+esac
+
+###############################################################################
+
+func_category Any_software_from_AUR
+
+list=(
+	xviewer
+)
+
+count=0
+for name in "${list[@]}"; do
+	count=$((count + 1))
+	echo
+	tput setaf 3
+	echo "Package nr. ${count}) ${name}"
+	tput sgr0
+	func_install "${name}"
+done
 
 ###############################################################################
 

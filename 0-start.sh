@@ -36,11 +36,11 @@ sudo pacman -Sy
 ./200-cinnamon-desktop.sh |& tee 200-cinnamon-desktop.log
 ./300-software-pacman.sh |& tee 300-software-pacman.log
 ./400-AUR-helper.sh |& tee 400-AUR-helper.log
-./410-software-AUR.sh |& tee 410-software-AUR.log
+./410-arcolinux-keys-and-repos.sh |& tee 410-arcolinux-keys-and-repos.log
+./420-chaotic-repo.sh |& tee 420-chaotic-repo.log
+./430-software-AUR.sh |& tee 430-software-AUR.log
 ./500-software-flatpak.sh |& tee 500-software-flatpak.log
-./600-arcolinux-keys-and-repos.sh |& tee 600-arcolinux-keys-and-repos.log
-./610-software-arcolinux.sh |& tee 610-software-arcolinux.log
-# ./620-additional-arcolinux-software.sh |& tee 620-additional-arcolinux-software.log
+# ./600-additional-arcolinux-software.sh |& tee 600-additional-arcolinux-software.log
 
 echo "
 ██████╗  ██████╗ ███╗   ██╗███████╗
