@@ -36,7 +36,7 @@ sudo pacman -Sy
 ./200-cinnamon-desktop.sh |& tee 200-cinnamon-desktop.log
 ./300-software-pacman.sh |& tee 300-software-pacman.log
 ./400-AUR-helper.sh |& tee 400-AUR-helper.log
-./410-arcolinux-keys-and-repos.sh |& tee 410-arcolinux-keys-and-repos.log
+./410-arcolinux-repos.sh |& tee 410-arcolinux-repos.log
 ./420-chaotic-repo.sh |& tee 420-chaotic-repo.log
 ./430-software-AUR.sh |& tee 430-software-AUR.log
 ./500-software-flatpak.sh |& tee 500-software-flatpak.log
